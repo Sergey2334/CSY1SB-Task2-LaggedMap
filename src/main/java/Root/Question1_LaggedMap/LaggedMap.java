@@ -1,4 +1,4 @@
-package Root;
+package Root.Question1_LaggedMap;
 
 import java.util.List;
 import java.util.Stack;
@@ -53,6 +53,11 @@ public class LaggedMap<K, V> {
             }
         }
         this.activeThreads.clear();
+
+        // Deletes The History
+//        for (Stack<V> historyStack : this.valuesHistory.values()) {
+//            historyStack.clear();
+//        }
     }
 
     public void remove(K key, boolean full) {
@@ -118,10 +123,21 @@ public class LaggedMap<K, V> {
     }
 
     // For Testing, Remove Later
-    public ConcurrentHashMap<K, V> getPublishedMap() { return this.publishedMap; }
-    public ConcurrentHashMap<K, V> getPublishedMapSnapshot() { return this.publishedMapSnapshot; }
-    public ConcurrentHashMap<K, Stack<V>> getValuesHistory() { return this.valuesHistory; }
-    public List<Thread> getActiveThreads() { return this.activeThreads; }
+    public ConcurrentHashMap<K, V> getPublishedMap() {
+        return this.publishedMap;
+    }
+
+    public ConcurrentHashMap<K, V> getPublishedMapSnapshot() {
+        return this.publishedMapSnapshot;
+    }
+
+    public ConcurrentHashMap<K, Stack<V>> getValuesHistory() {
+        return this.valuesHistory;
+    }
+
+    public List<Thread> getActiveThreads() {
+        return this.activeThreads;
+    }
 
 /*
 Question 8:
